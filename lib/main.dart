@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.orange,
       ),
-      home: const MyHomePage(title: 'Family Hierarchy'),
+      home: const MyHomePage(title: 'Login Demo'),
     );
   }
 }
@@ -102,6 +102,9 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            TextField(
+              style: Theme.of(context).textTheme.headline4,
+            )
           ],
         ),
       ),
