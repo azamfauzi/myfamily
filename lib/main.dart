@@ -44,7 +44,30 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageStatenNew();
+}
+
+class _MyHomePageStatenNew extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Container example"),
+        ),
+        body: Container(
+          height: 200,
+          width: double.infinity,
+          color: Colors.purple,
+          alignment: Alignment.bottomCenter,
+          margin: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(30),
+          child: const Text("Hello! i am inside a container!",
+              style: TextStyle(fontSize: 20)),
+        ),
+      ),
+    );
+  }
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -69,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -103,11 +127,15 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             TextField(
-              style: Theme.of(context).textTheme.headline4,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Enter a search term',
+              ),
             )
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
